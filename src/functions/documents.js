@@ -54,6 +54,11 @@ app.http('documents', {
 
             return {
                 status: 200,
+                headers: {
+                    'Cache-Control': 'no-store, no-cache, must-revalidate',
+                    'Pragma': 'no-cache',
+                    'Expires': '0'
+                },
                 jsonBody: documents
             };
 
