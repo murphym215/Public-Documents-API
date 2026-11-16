@@ -84,7 +84,9 @@ app.http('document', {
                     'Content-Type': contentType,
                     'Content-Disposition':
                         `inline; filename="${encodeURIComponent(fileName)}"`,
-                    'Cache-Control': 'public, max-age=3600'
+                    'Cache-Control': 'no-store, no-cache, must-revalidate',
+                    'Pragma': 'no-cache',
+'Expires': '0'
                 },
 
                 body: body
